@@ -4,6 +4,18 @@ Thin wrapper of [pg_query_go](https://github.com/pganalyze/pg_query_go) for conv
 
 ## Usage
 
+Either enter a SQL query string as a single command:
+
+```bash
+go run main.go "SELECT 1;"
+```
+
+ Or pipe in on stdin. 
+
+```bash
+go run main.go < query_string.sql
+```
+
 Example: Simple Select
 
 ```sql
@@ -12,7 +24,7 @@ FROM baz
 WHERE foo > 1;
 ```
 
-```go
+```bash
 go run main.go < simple_select.sql | jq
 ```
 
@@ -94,7 +106,7 @@ FROM (SELECT foo from bar) t
 WHERE foo > 1;
 ```
 
-```go
+```bash
 go run main.go < nested_select.sql | jq
 ```
 
