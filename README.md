@@ -100,6 +100,8 @@ Output: (very verbose, you can use jq to filter arbitrarily for clarity)
 }
 ```
 
+Example: Nested Select (emphasizes tree representation and composability of parsed statements)
+
 ```sql
 SELECT t.foo
 FROM (SELECT foo from bar) t
